@@ -1,21 +1,21 @@
-# 🗂️ @robert.tools/sample
+# 🗂️ @robert.tools/eleventy-filter-all-values
 
-<description>
+Concat all values in a string.
 
 ## 📜 Usage
 
 ### 🟢 Installation
 
 ```bash
-npm install @robert.tools/sample
+npm install @robert.tools/eleventy-filter-all-values
 ```
 
 ### 📝 Sample usage
 
 ```typescript
-import { <name> } from '@robert.tools/sample';
+import { eleventy-filter-all-values } from '@robert.tools/eleventy-filter-all-values';
 
-<name>('hello'); // '<name>: hello'
+eleventy-filter-all-values('hello'); // 'eleventy-filter-all-values: hello'
 ```
 
 ## 🗃️ commands
