@@ -13,9 +13,16 @@ npm install @robert.tools/eleventy-filter-all-values
 ### 📝 Sample usage
 
 ```typescript
-import { eleventy-filter-all-values } from '@robert.tools/eleventy-filter-all-values';
+import allValues from '@robert.tools/eleventy-filter-all-values';
+```
+## 📜 Usage
+By default lowercase.
 
-eleventy-filter-all-values('hello'); // 'eleventy-filter-all-values: hello'
+```nunjucks
+{{ { a: 'Hello', c: 2 } | allValues() }} {# result: 'hello 2' #}
+{{ ['Hello', 'World', 2] | allValues() }} {# result: 'Hello World 2' #}
+{{ { a: 'Hello', c: 2 } | allValues('uppercase') }} {# result: 'HELLO 2' #}
+
 ```
 
 ## 🗃️ commands

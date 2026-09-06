@@ -1,18 +1,16 @@
-/**
- * 🧪 testing module
- * @version 1.0.0
- * @date 2026-09-06
- * @license MIT
- * @author Robert Willemelis <github.com/willi84>
- */
-import { sample } from './index';
+import fn from './index';
 
-describe('@robert.tools/eleventy-filter-all-values', () => {
-    it('should return a eleventy-filter-all-values string', () => {
-        expect(sample('hello')).toBe('sample: hello');
+describe('fn()', () => {
+    const FN = fn;
+    it('should get all values from an object', () => {
+        expect(FN({})).toBe('');
+        expect(FN({ a: 'Hello', b: 'World', c: 2 })).toBe('hello world 2');
+        expect(FN({ a: 'Hello', b: 'World' }, 'f')).toBe('Hello World');
     });
-
-    it('should return a eleventy-filter-all-values string with empty input', () => {
-        expect(sample('')).toBe('sample: ');
+    it('should get all values from an array', () => {
+        expect(FN([])).toBe('');
+        expect(FN(['Hello', 'World', 2])).toBe('hello world 2');
+        expect(FN(['Hello', 'World'], 'normal')).toBe('Hello World');
+        expect(FN(['Hello', 'World'], 'uppercase')).toBe('HELLO WORLD');
     });
 });

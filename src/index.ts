@@ -1,11 +1,21 @@
 /**
- * 🗂️ main module
- * @version 1.0.0
- * @date 2026-09-06
- * @license MIT
- * @author Robert Willemelis <github.com/willi84>
+ * 🎯 Get all values from an object or array and join them into a string.
+ * @param {object | any[]} object ➡️ The object or array to get values from.
+ * @param {string} type ➡️ type of transformation
+ * @returns {string} 📤 The joined string of all values.
  */
-import type { SAMPLE } from './index.d';
-export function sample(value: SAMPLE): string {
-    return `sample: ${value}`;
-}
+const fn = (object: any, type = 'lowercase') => {
+    const values = Object.values(object);
+    if (values.length === 0) return '';
+    let result = values.join(' ');
+    switch (type) {
+        case 'lowercase':
+            result = result.toLowerCase();
+            break;
+        case 'uppercase':
+            result = result.toUpperCase();
+            break;
+    }
+    return result;
+};
+export default fn;
